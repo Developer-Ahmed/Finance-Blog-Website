@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/storyForm.css">
+    <!-- FilePond -->
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+    <script src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
+<script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+    <script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
+    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+    <script src="https://unpkg.com/filepond-plugin-image-exif-orientation/dist/filepond-plugin-image-exif-orientation.js"></script>
+    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+</head>
+<body>
+
+  <%- include("navbar.ejs") %>
+
+  <!-- story -->
+  <div class="story">
+    <!-- form -->
+    <form action="/stories/<%= story.id %>/edit?_method=PUT" method="POST" >
+      <!-- title -->
+      <textarea class="title-input" name="title"><%= story.title %></textarea> 
+
+      <!-- Cover Image -->
+      <h3 class="cover-image-txt">Cover Image: Please Type Full Url</h3>
+
+
+      <!-- <input type="image" src="" alt="" class="cover-image"> -->
+
+      <input type="url" name="coverImage" id="cover-image" value="<%= story.coverImage %>"> 
+
+      <!-- guide -->
+      <div class="guide">
+        <br>
+        <br>
+        <p><b>To add one line space:</b> write &#60;br&#62; &#60;br&#62; after the text you want to add space.</p>
+        <br>
+        <p><b>Bold:</b> surround the text you want to make bold with two asterisks(*)</p>
+        <br>
+        <p><b>Italic:</b> surround the text you want to make italic with one asterisk(*)</p>
+        <br>
+        <p><b>Adding Images:</b> use ![Text](https://hopefulsteps.com/image.jpg) and replace the text inside paranthesis with the source of your image. </p>
+      </div>
+
+      <!-- markup textbox -->
+      <textarea class="content-input" name="content"><%= story.content %></textarea>
+
+      <!-- description -->
+      <textarea class="description-input" name="description"><%= story.description %></textarea> 
+
+      <!-- checkbox: top-story -->
+      <label>
+        <input type="checkbox" name="topStory" id="form-checkbox" value="<%= story.topStory %>">Top Story
+      </label>
+
+      <!-- Attachments -->
+      <input type="file" class="filepond" id="attachments" name="attachments" value="<%= story.attachments %>">
+
+      <button type="submit" class="submit-button">Save Changes</button>
+      
+    </form>
+
+    <script>
+      FilePond.registerPlugin(
+        FilePondPluginImageExifOrientation,
+        FilePondPluginFileValidateSize,
+        FilePondPluginFileEncode
+      );
+      FilePond.parse(document.body);
+    </script>
+</body>
+</html>

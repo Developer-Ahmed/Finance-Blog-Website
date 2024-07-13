@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src https://unpkg.com/ 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src * data: ;object-src 'none';script-src https://unpkg.com/ 'self';script-src-attr 'none';style-src https://unpkg.com/ 'self' https: 'unsafe-inline';upgrade-insecure-requests">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="/images/financeWeb-logo.svg">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/financeArticles.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+</head>
+<body>
+
+    <%- include("navbar.ejs") %>
+
+    <div class="daily-finance">
+        <!-- <h2 class="header">Daily Finance</h2> -->
+        <div class="stories">
+          <div class="section1">
+            <div class="stories-group">
+              <% recentStories.forEach(story => { %>
+                <div class="story1">
+                    <a href="/stories/story/<%= story.id %>"><img src="<%= story.coverImagePath %>"></a>
+                    <div class="story1-text">
+                      <h3 class="story1-title">
+                        <%= story.title %>
+                      </h3>
+                      <p class="story1-description"><%= story.description %></p>
+                      <p class="story1-author">
+                        By Author
+                      </p>
+                    </div>
+                  </div>
+              <% }) %>
+            </div>
+          </div>
+          <div class="section2">
+              <% topStories.forEach(story => { %>
+                <div class="story2">
+                    <a href="/stories/story/<%= story.id %>"><img src="<%= story.coverImagePath %>"></a>
+                    <div class="story2-text">
+                      <h3 class="story2-title">
+                        <%= story.title %>
+                      </h3>
+                      <p class="story2-author">
+                        By Author
+                      </p>
+                    </div>
+                  </div>
+              <% }) %>
+          </div>
+        </div>
+      </div>
+</body>
+</html>

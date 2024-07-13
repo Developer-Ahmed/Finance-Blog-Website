@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/storyForm.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+</head>
+<body>
+
+  <%- include("navbar.ejs") %>
+
+  <!-- story -->
+  <div class="story" data-storypage>
+    <!-- title -->
+    <h1 class="story-title"><%= story.title %></h1> 
+
+    <!-- Time -->
+    <p class="story-time"><%= story.createdAt.toLocaleDateString() %></p>
+
+    <!-- Cover Image -->
+    <img src="<%= story.coverImagePath %>" alt="Cover Image" class="cover-image">
+
+    <!-- markup textbox -->
+    <div class="story-content"><%- story.sanitizedHtml %></div>
+
+    <!-- Author -->
+    <p class="story-author"><%= story.author.username %></p>
+
+    <!-- Attachment -->
+    <div class="attachment">
+      <h2 class="attachment-txt">Attachment</h2>
+      <img src="<%= story.attachmentPath %>" alt="attachment">
+      <a href="<%= story.attachmentPath %>" download>Download</a>
+      <!--<form action="" method="post">
+        <input type="text" name="attachmentUrl" id="attachment-url" value="<%= story.attachmentPath %>">
+        <button type="submit">Download</button>
+      </form> -->
+    </div>
+  </div>
+
+</body>
+</html>

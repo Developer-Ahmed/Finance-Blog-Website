@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.hidden {
+    visibility: hidden;
+}
+
+/* navigation start */
+.section4 {
+    font-family: 'Outfit', sans-serif;
+}
+.section4-navigation {
+    background-color: #a8eb34;
+    padding: 25px;
+}
+.section4-navigation a {
+    text-decoration: none;
+    color: black;
+    margin-left: 50px;
+    font-size: 18px;
+}
+.section4-navigation a:hover {
+    border-bottom: 2px solid black;
+}
+/* navigation end */
+/* story start */
+.story {
+    margin-top: 50px;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    /* border: 1px solid black; */
+    height: 100%;
+    padding: 25px;
+    font-family: 'Open Sans', sans-serif;
+
+    position: relative;
+}
+
+#cover-image {
+    margin-top: 25px;
+}
+
+.title-input {
+    width: 100%;
+    padding: 15px 30px;
+
+    display: block;
+    width: 92%;
+    overflow: hidden;
+    min-height: 95px;
+
+    border: 1px solid gray;
+    resize: vertical;
+    font-size: 35px;
+    font-family: 'Open Sans', sans-serif;
+
+    font-style: bold;
+    font-weight: 1000;
+}
+
+.description-input {
+    width: 100%;
+    padding: 7.5px 15px;
+
+    display: block;
+    width: 95.25%;
+    overflow: hidden;
+    min-height: 200px;
+
+    border: 1px solid gray;
+    border-radius: 2.5px;
+    resize: vertical;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+
+    margin-top: 75px;
+
+    text-align: center;
+}
+
+
+/* content */
+.content-input {
+    width: 100%;
+    padding: 15px;
+
+    display: block;
+    overflow: hidden;
+    min-height: 300px;
+
+    border: 1px solid gray;
+    border-radius: 2.5px;
+    resize: vertical;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+/* submit button */
+.submit-button {
+    outline: none;
+    border: 0;
+    padding: 15px 25px;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+label {
+    display: block;
+}
+
+#form-checkbox {
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.title-input, .description-input, .content-input, #cover-image, #attachments {
+    max-width: 700px;
+    padding: 20px;
+}
+
+#cover-image {
+    margin-top: 20px;
+    margin-right: 35px;
+    width: 98%;
+    min-height: 50px;
+    padding: 10px 20px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.cover-image-txt {
+    margin-top: 35px;
+}
+
+#attachments {
+    margin-top: 25px;
+}
+
+#display-image{
+    width: 400px;
+    height: 225px;
+    border: 1px solid black;
+    background-position: center;
+    background-size: cover;
+}
+
+/* 
+STORY PAGE STYLING 
+*/
+
+h1, h2, h3, h4, ul {
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+ul {
+    margin-left: 40px;
+}
+
+.story-content, .story-title {
+    display: block;
+    width: 100%;
+    padding: 0;
+}
+
+.story-title {
+    font-size: 40px;
+}
+
+img {
+    width: 100%;
+    margin-left: -1%;
+}
+
+[data-storypage] {
+    max-width: 900px;
+}
+
+.story-time {
+    margin-bottom: 25px;
+}
+
+.cover-image-div {
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.story-content {
+    font-size: 20px;
+    margin-top: 25px;
+}
+
+#attachment-url {
+    display: none;
+    pointer-events: none;
+}
+
+.attachment {
+    width: 20%;
+
+    margin-top: 50px;
+}
+
+.attachment form button {
+    outline: none;
+    border: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    color: blue;
+    background-color: transparent;
+    cursor: pointer;
+}
