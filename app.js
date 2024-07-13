@@ -23,10 +23,7 @@ app.use('/css', express.static(__dirname + 'public/css'));
 app.use('/js', express.static(__dirname + 'public/js'));
 app.use('/images', express.static(__dirname + 'public/images'));
 
-const { username, password, keys_list } = require("./secret")
-console.log(username, password, keys_list)
-
-const uri = `mongodb+srv://${username}:${password}@cluster0.vud9x.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+const { uri, keys_list } = require("./secret")
 
 // mongodb 
 mongoose.connect(uri);
